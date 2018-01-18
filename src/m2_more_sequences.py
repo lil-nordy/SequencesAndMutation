@@ -10,8 +10,8 @@ for ITERATING through SEQUENCES, including selections from:
   -- Looking at two sequences in parallel
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Nathaniel Neil Nate Nordquist.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -21,6 +21,7 @@ def main():
     run_test_number_of_stutters()
     run_test_is_palindrome()
     run_test_count_same()
+
 
 
 # ----------------------------------------------------------------------
@@ -103,9 +104,16 @@ def shortest_string(strings):
       :type strings: list[str]   or tuple(str)
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # done: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
+    index_of_min = 0
+    for k in range(1, len(strings)):
+        if len(strings[k]) < len(strings[index_of_min]):
+            index_of_min = k
+        if len(strings[k]) == len(strings[index_of_min]):
+            index_of_min = index_of_min
+    return strings[index_of_min]
 
 
 def run_test_index_of_largest_number():
@@ -180,9 +188,14 @@ def index_of_largest_number(numbers, n):
 
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
+    index_of_max = 0
+    for k in range(1, n, 1):
+        if numbers[k] > numbers[index_of_max]:
+            index_of_max = k
+    return index_of_max
 
 
 # ----------------------------------------------------------------------
@@ -235,10 +248,14 @@ def number_of_stutters(s):
        :type s: str
     """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
-
+    stutters = 0
+    for k in range(len(s) - 1):
+        if s[k + 1] == s[k]:
+            stutters += 1
+    return stutters
 
 def run_test_is_palindrome():
     """ Tests the   is_palindrome   function. """
@@ -308,7 +325,7 @@ def is_palindrome(s):
       :type s: str
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #     The testing code is already written for you (above).
     #
     ####################################################################
@@ -317,8 +334,22 @@ def is_palindrome(s):
     #   above are particularly good examples to work by hand.
     ####################################################################
     # ------------------------------------------------------------------
+    pass_fail = True
+    for k in range(len(s) // 2): # check up to the middle
+        if s[k] != s[len(s) - 1 - k]: # starts at the index of the last value - 0 (len[s] = 7, index = 6, k = 0,
+    # compares to s[6]
+            pass_fail = False
+    return pass_fail
 
 
+    # Failed attempt #1:
+    # checks = 0
+    # for k in range(len(s)):
+    #     if s[k] == s[len(s) - k]:
+    #         checks += 1
+    # if checks == len(s):
+    #     return True
+    # return False
 # ----------------------------------------------------------------------
 # Some problems loop (iterate) through two or more sequences
 #    IN PARALLEL, as in the   count_same   problem below.
@@ -375,9 +406,15 @@ def count_same(sequence1, sequence2):
       type: sequence2: tuple or list or string
     """
     # ------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
+    repeats = 0
+    for k in range(min(len(sequence1), len(sequence2))): # the 'min' builtin function's docString is contrl +
+        # clickable
+        if sequence1[k] == sequence2[k]:
+            repeats += 1
+    return repeats
 
 
 # ----------------------------------------------------------------------
