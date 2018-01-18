@@ -22,6 +22,7 @@ def main():
     #    thus MUTATING the LIST (because an ELEMENT in it was ASSIGNED).
     # ------------------------------------------------------------------
     numbers = [45, 100, 8]
+    print('original list:', numbers)
     numbers[2] = 99
     print(numbers)  # To see that the INSIDES of   numbers   has changed
 
@@ -43,7 +44,7 @@ def main():
     print(numbers, numbers2)  # Prints the two DIFFERENT lists
 
     # ------------------------------------------------------------------
-    # Shows the difference betwee the   is   operator
+    # Shows the difference betwee*n* *spelling the   is   operator
     #    (two things refer to the same place in memory)
     # and the   ==   operator (two things contain the same data).
     # ------------------------------------------------------------------
