@@ -31,7 +31,7 @@ import random
 
 
 def main():
-    one_example_of_danger()
+    # one_example_of_danger()
     another_example_of_danger()
 
 
@@ -182,6 +182,8 @@ class BankAccount(object):
         message = 'Using {} of your savings to pay for college.'
         print(message.format(tuition))
 
+        ### OOOH, I SEE! --> nope, I was wrong. I thought that this had some iterative process, but it only runs one
+        # time per function call. Look in the show_balances() function for david's funnel.
         if self.savings >= tuition:
             self.savings = self.savings - tuition
         else:
