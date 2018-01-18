@@ -26,6 +26,7 @@ def main():
     #      its INSTANCE VARIABLES was ASSIGNED a new value).
     # ------------------------------------------------------------------
     point = rg.Point(45, 100)
+    print('originally:', point)
     point.y = 33
     print(point)  # To see that the INSIDES of   point   has changed
 
@@ -48,7 +49,7 @@ def main():
     print(point, point2)  # Prints the two DIFFERENT zg.Points
 
     # ------------------------------------------------------------------
-    # Shows the difference betwee the   is   operator
+    # Shows the difference betwee*n* *spelling* the   is   operator
     #    (two things refer to the same place in memory)
     # and the   ==   operator (two things contain the same data).
     # ------------------------------------------------------------------
@@ -67,7 +68,8 @@ def main():
 
 
 def mutate_point(point):
-    point.y = 77
+    for k in range(1):
+        point.y = point.y + 44
 
 # ----------------------------------------------------------------------
 # If this module is running at the top level (as opposed to being
