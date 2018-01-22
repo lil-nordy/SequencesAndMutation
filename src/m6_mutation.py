@@ -141,6 +141,12 @@ def RETURN_replace_negatives_by_zeros(numbers):
             new_numbers += [numbers[k]]
     return new_numbers
 
+    # My friend Patrick's solution:
+    # list = [] + numbers
+    # for k in range(len(numbers)):
+    #     if numbers[k] < 0:
+    #         list[k] = 0
+    # return list
 
 def run_test_MUTATE_replace_negatives_by_zeros():
     """ Tests the   MUTATE_replace_negatives_by_zeros   function. """
